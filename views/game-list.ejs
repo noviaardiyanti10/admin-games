@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("partial/head.ejs") %>
+
+    <body class="users">
+
+        <%- include("partial/navbar.ejs") %>
+
+            <main class="container-fluid my-4 ">
+
+                <div class="head-title my-3">
+                    <h3 class="fw-bold text-center py-4">Data Games</h3>
+                </div>
+
+                <div class="table table-responsive tableFixHead shadow-sm px-4">
+                    <table class="table table-fixed  ">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">First Player</th>
+                                <th scope="col">Second Player</th>
+                                <th scope="col">First Select</th>
+                                <th scope="col">Second Select</th>
+                                <th scope="col">Player Win</th>
+                                <th scope="col">Played At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% i=1;
+                             games.forEach(gm => { %>
+
+
+                                <tr>
+                                    <th scope="row" class="my-1">
+                                        <%= i++ %>
+                                    </th>
+                                    <td>
+                                        <%= gm.first_player %>
+                                    </td>
+                                    <td>
+                                        <%= gm.second_player %>
+                                    </td>
+
+                                    <td>
+                                        <%= gm.fp_select%>
+                                    </td>
+                                    <td>
+                                        <%= gm.sp_select %>
+                                    </td>
+                                    <td>
+                                        <%= gm.player_win %>
+                                    </td>
+                                    <td>
+                                        <%= gm.played_at %>
+                                    </td>
+
+
+                                </tr>
+                                <% }) %>
+
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
+
+    </body>
+
+</html>
